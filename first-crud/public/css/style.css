@@ -1,0 +1,38 @@
+.table {
+    border-radius: 8px;
+}
+
+.fa-minus, .fa-plus {
+    font-size: 12px;
+}
+
+.results {
+    margin-top: 36px;
+    display: flex;
+    justify-content: center;
+}
+
+.results .bg-danger {
+    border-radius: 0;
+    box-shadow: 5px 5px 5px #222;
+}
+
+.results .bg-success {
+    -webkit-border-radius: 0 32px 32px 0;
+    -moz-border-radius: 0 32px 32px 0;
+    border-radius: 0 32px 32px 0;
+    border-radius: 32px 0 0 32px;
+    box-shadow: 5px 5px 5px #222;
+}
+
+.results .bg-dark {
+    -webkit-border-radius: 0 32px 32px 0;
+    -moz-border-radius: 0 32px 32px 0;
+    border-radius: 0 32px 32px 0;
+    box-shadow: 5px 5px 5px #222;
+}
+
+.card {
+    width: 12rem;
+    border-width: 0.56px;
+}

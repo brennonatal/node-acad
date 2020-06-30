@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Account</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+
+</head>
+
+<body class="bg-secondary">
+    <div class="container-fluid">
+        <div style="margin-top: 48px;">
+            <h1>My account</h1>
+        </div>
+
+        <hr>
+        <div class="col-12">
+
+            <h3>Transactions</h3>
+
+
+            <table class="table table-dark table-striped table-borderless table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody id="table">
+                    <tr>
+                        <td>1</td>
+                        <td>Name test</td>
+                        <td>outcome</td>
+                        <td class="text-danger"><i class="fa fa-minus" aria-hidden="true"></i> 550.00</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Name test</td>
+                        <td>income</td>
+                        <td class="text-success"><i class="fa fa-plus" aria-hidden="true"></i> 550.00</td>
+                    </tr>
+                  
+                </tbody>
+
+            </table>
+
+            <div class="results">
+                <div class="card text-white bg-success mb-3">
+                    <div class="card-header">Total income</div>
+                    <div class="card-body">
+                        <h5 class="card-title">$ 3000</h5>
+                    </div>
+                </div>
+                <div class="card text-white bg-danger mb-3">
+                    <div class="card-header">Total outcome</div>
+                    <div class="card-body">
+                        <h5 class="card-title">$ 500</h5>
+                    </div>
+                </div>
+                <div class="card text-white bg-dark mb-3">
+                    <div class="card-header">Total balance</div>
+                    <div class="card-body">
+                        <h5 class="card-title">$ 12000</h5>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
