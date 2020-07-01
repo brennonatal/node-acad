@@ -1,38 +1,56 @@
-.table {
-    border-radius: 8px;
+header {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.fa-minus, .fa-plus {
-    font-size: 12px;
+input#darkSwitch.custom-control-input:focus{
+   outline-style: hidden;
+   outline-width: 0;
+   outline: none;
 }
 
 .results {
-    margin-top: 36px;
+    margin-top: 16px;
     display: flex;
     justify-content: center;
 }
 
-.results .bg-danger {
-    border-radius: 0;
-    box-shadow: 5px 5px 5px #222;
-}
-
 .results .bg-success {
-    -webkit-border-radius: 0 32px 32px 0;
-    -moz-border-radius: 0 32px 32px 0;
-    border-radius: 0 32px 32px 0;
+    background-color: rgba(76, 167, 70, 0.85) !important;
+    -webkit-border-radius: 32px 0 0 32px;
+    -moz-border-radius: 32px 0 0 32px;
     border-radius: 32px 0 0 32px;
-    box-shadow: 5px 5px 5px #222;
+    /* box-shadow: 5px 5px 5px 1px #222; */
+    overflow: hidden;
 }
 
-.results .bg-dark {
+.results .bg-danger {
+    background-color: rgba(220, 53, 70, 0.85) !important;
+    border-radius: 0;
+    /* box-shadow: 5px 5px 5px 1px #222; */
+}
+
+.results .bg-secondary {
+    background-color: rgba(50, 56, 62, 0.80) !important;
     -webkit-border-radius: 0 32px 32px 0;
     -moz-border-radius: 0 32px 32px 0;
     border-radius: 0 32px 32px 0;
-    box-shadow: 5px 5px 5px #222;
+    /* box-shadow: 5px 5px 5px 1px #222; */
+    overflow: hidden;
 }
 
 .card {
     width: 12rem;
-    border-width: 0.56px;
+    border-width: 0;
+}
+
+.table {
+    border-radius: 8px;
+    background-color: #ecececd5;
+}
+
+.fa-minus, .fa-plus {
+    font-size: 12px;
 }
