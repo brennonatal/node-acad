@@ -28,9 +28,7 @@ app.use((req: express.Request, res: express.Response, next: express.NextFunction
 	next()
 });
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/index.html'))
-})
+app.use('/', require('./routes/home'))
 
 const port = (parseInt(process.env.PORT) || 3000);
 
