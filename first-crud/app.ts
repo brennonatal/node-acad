@@ -29,6 +29,7 @@ app.use((req: express.Request, res: express.Response, next: express.NextFunction
 });
 
 app.use('/', require('./routes/home'))
+app.use('/api/conta', require('./routes/api/conta'))
 
 const port = (parseInt(process.env.PORT) || 3000);
 
