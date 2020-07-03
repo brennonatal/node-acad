@@ -42,7 +42,7 @@ router.post('/create', wrap(async (req, res) => {
         return
     }
 
-    res.json(transaction.id)
+    res.json('success')
 }))
 
 export = router

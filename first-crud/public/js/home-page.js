@@ -1,6 +1,7 @@
 let dark = document.getElementById('darkSwitch');
 let icon = $('#iconMode')
 
+
 function changeIcon() {
     if (dark.checked) {
         icon.removeClass('fa-moon-o')
@@ -19,3 +20,8 @@ function setIcon() {
     }
 
 }
+
+$(document).ready(function () {
+    $('#amount').mask('000.000.000.000.000,00', { reverse: true });
+    // $('#amount').mask("#.##0,00", { reverse: true });
+})
