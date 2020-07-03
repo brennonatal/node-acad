@@ -35,4 +35,7 @@
     .card .card-body .card-title {
         margin-bottom: 0;
     }
+    .table {
+        font-size: 12px;
+    }
 }
