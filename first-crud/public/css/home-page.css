@@ -51,6 +51,14 @@ input#darkSwitch.custom-control-input:focus{
     background-color: #ecececd5;
 }
 
+.table td {
+    vertical-align: middle;
+}
+
 .fa-minus, .fa-plus {
     font-size: 12px;
+}
+
+.close {
+    text-shadow: none;
 }

@@ -32,4 +32,14 @@
     background-color: #32383E !important;
   }
  
+  [data-theme="dark"] .text-dark {
+    color: #EEEEEE !important;
+  }
+
+  [data-theme="dark"] .form-control{
+    background-color: #343A40 !important;
+    color: #a1a1a1 !important;
+  }
+ 
+
  

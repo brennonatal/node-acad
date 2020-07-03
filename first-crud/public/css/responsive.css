@@ -8,18 +8,15 @@
         -webkit-border-radius: 32px 32px 0 0;
         -moz-border-radius: 32px 32px 0 0;
         border-radius: 32px 32px 0 0;
-        box-shadow: 5px 5px 5px 1px #222;
         overflow: hidden;
     }
     .results .bg-danger {
         border-radius: 0;
-        box-shadow: 5px 5px 5px 1px #222;
     }
     .results .bg-secondary {
         -webkit-border-radius: 0 0 32px 32px;
         -moz-border-radius: 0 0 32px 32px;
         border-radius: 0 0 32px 32px;
-        box-shadow: 5px 5px 5px 1px #222;
         overflow: hidden;
     }
     .card {
@@ -37,5 +34,9 @@
     }
     .table {
         font-size: 12px;
+    }
+    .table td {
+        display: table-cell;
+        padding: 0.2rem 0.75rem;
     }
 }

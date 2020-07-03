@@ -1,0 +1,36 @@
+<!-- Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-light">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel">New transaction</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Transaction name</label>
+                        <input type="text" class="form-control border-0" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Transaction type</label>
+                        <select class="form-control border-0" id="type" required>
+                            <option>Income</option>
+                            <option>Outcome</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="text" class="form-control border-0" id="amount" placeholder="$" required>
+                    </div>
+                    <hr>
+                    <button type="submit" class="btn btn-primary btn-block">Add</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
