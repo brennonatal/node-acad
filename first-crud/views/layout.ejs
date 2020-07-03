@@ -1,1 +1,25 @@
-<%- body %> 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <%- include('header') %>
+
+    <%- defineContent('header-end') %>
+
+    <link rel="stylesheet" href="/css/responsive.css">
+
+</head>
+
+<body onload="setIcon()">
+    <div class="container-fluid">
+        <%- body %>
+    </div>
+
+    <%- include('footer') %>
+
+    <%- defineContent('scripts') %>
+
+</body>
+
+</html>
