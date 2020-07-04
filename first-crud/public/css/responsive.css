@@ -35,8 +35,4 @@
     .table {
         font-size: 12px;
     }
-    .table td {
-        display: table-cell;
-        padding: 0.2rem 0.75rem;
-    }
 }
