@@ -22,6 +22,10 @@ function setIcon() {
 }
 
 $(document).ready(function () {
-    $('#amount').mask('000.000.000.000.000,00', { reverse: true });
+    $('#amount').mask('000000000000000.00', { reverse: true });
     // $('#amount').mask("#.##0,00", { reverse: true });
 })
+
+// $('.modal').on('hidden.bs.modal', function () {
+//     $(this).find('form')[0].reset()
+// })

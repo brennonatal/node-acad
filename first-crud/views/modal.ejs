@@ -10,21 +10,35 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form id="form" class="needs-validation" novalidate>
                     <div class="form-group">
                         <label for="name">Transaction name</label>
-                        <input type="text" class="form-control border-0" id="name" required>
+                        <input type="text" name="name" class="form-control border-0" id="name" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide a name for this transaction.
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="type">Transaction type</label>
-                        <select class="form-control border-0" id="type" required>
+                        <select class="form-control border-0" id="type" name="type" required>
+                            <option value="" selected disabled></option>
                             <option>Income</option>
                             <option>Outcome</option>
                         </select>
+                        <div class="invalid-feedback">
+                            Please select a transaction type.
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="amount">Amount</label>
-                        <input type="text" class="form-control border-0" id="amount" placeholder="$" required>
+                        <input type="text" class="form-control border-0" id="amount" name="amount" placeholder="$"
+                            required>
+                        <div class="invalid-feedback">
+                            Please provide the transaction amount.
+                        </div>
                     </div>
                     <hr>
                     <button type="submit" class="btn btn-primary btn-block">Add</button>
@@ -34,3 +48,27 @@
         </div>
     </div>
 </div>
+
+<script>
+
+    (() => {
+        'use strict';
+        window.addEventListener('load', () => {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation')
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false);
+            })
+        }, false)
+    })()
+
+    
+
+</script>
