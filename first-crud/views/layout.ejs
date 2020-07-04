@@ -83,6 +83,59 @@
                 })
             }
         })
+
+        function update() {
+
+            if ($.active) return
+
+            $.ajax({
+                url: '/api/conta/getAll',
+                method: 'get',
+
+                success: function (data) {
+
+                    let table = $('#table')
+
+                    var html = ''
+
+                    for (var i = 0; i < data.length; i++) {
+
+                        var transaction = data[i]
+
+                        if (transaction.tipo == "Outcome") {
+                            html +=
+                                `<tr>
+                                    <td colspan="3"> ${transaction.nome} </td>
+                                    <td colspan="2" class="text-danger"><i class="fa fa-minus" aria-hidden="true"></i> ${transaction.valor} </td>
+                                    <td> ${transaction.dia.slice(8, 10)}/${transaction.dia.slice(5, 7)}/${transaction.dia.slice(0, 4)} </td>
+                                    <td colspan="10"> ${transaction.token} </td>
+                                 </tr>`
+                        } else {
+                            html +=
+                                `<tr>
+                                    <td colspan="3"> ${transaction.nome} </td>
+                                    <td colspan="2" class="text-success"><i class="fa fa-plus" aria-hidden="true"></i> ${transaction.valor} </td>
+                                    <td>${transaction.dia.slice(8, 10)}/${transaction.dia.slice(5, 7)}/${transaction.dia.slice(0, 4)} </td>
+                                    <td colspan="10"> ${transaction.token} </td>
+                                </tr>`
+                        }
+
+                    }
+
+                    table.html(html);
+
+                },
+
+                error: function () {
+                    alert("Something went wrong");
+                }
+
+
+            })
+        }
+
+        update()
+
     </script>
 
 </body>
