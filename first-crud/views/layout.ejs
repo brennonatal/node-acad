@@ -20,7 +20,7 @@
 
 
     <%- include('footer') %>
-    
+
     <script src="/js/home-page.js"></script>
 
     <script>
@@ -70,8 +70,7 @@
                     success: function (dadosDeRetorno) {
                         alert(dadosDeRetorno)
                         form.reset()
-                        $('#registerModal').modal('hide')
-
+                        setTimeout(() => { window.location = "/" }, 1)
                     },
 
                     error: function (xhr) {
