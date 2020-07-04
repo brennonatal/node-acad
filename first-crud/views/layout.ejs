@@ -84,6 +84,23 @@
             }
         })
 
+
+        function deleteTransaction(id) {
+			
+			$.ajax({
+				url: '/api/conta/delete/' + id,
+				method: "GET",
+				
+				success: function (data) {
+					update()
+				},
+				
+				error: function () {
+					alert('Something went wrong')
+				}
+			})
+		}
+
         function update() {
 
             if ($.active) return
@@ -92,7 +109,7 @@
                 url: '/api/conta/getAll',
                 method: 'get',
 
-                success: function (data) {
+                success: data => {
 
                     let table = $('#table')
 
@@ -109,7 +126,9 @@
                                     <td colspan="2" class="text-danger"><i class="fa fa-minus" aria-hidden="true"></i> ${transaction.valor} </td>
                                     <td> ${transaction.dia.slice(8, 10)}/${transaction.dia.slice(5, 7)}/${transaction.dia.slice(0, 4)} </td>
                                     <td colspan="10"> ${transaction.token} </td>
+                                    <td><a type="button" class="text-danger" onclick="deleteTransaction(${transaction.id})"><i class="fa fa-times" aria-hidden="true"></i></a></td>
                                  </tr>`
+                                 
                         } else {
                             html +=
                                 `<tr>
@@ -117,17 +136,18 @@
                                     <td colspan="2" class="text-success"><i class="fa fa-plus" aria-hidden="true"></i> ${transaction.valor} </td>
                                     <td>${transaction.dia.slice(8, 10)}/${transaction.dia.slice(5, 7)}/${transaction.dia.slice(0, 4)} </td>
                                     <td colspan="10"> ${transaction.token} </td>
+                                    <td><a type="button" class="text-danger" onclick="deleteTransaction(${transaction.id})"><i class="fa fa-times" aria-hidden="true"></i></a></td>
                                 </tr>`
                         }
 
                     }
 
-                    table.html(html);
+                    table.html(html)
 
                 },
 
-                error: function () {
-                    alert("Something went wrong");
+                error: () => {
+                    alert("Something went wrong")
                 }
 
 
@@ -135,6 +155,7 @@
         }
 
         update()
+
 
     </script>
 
