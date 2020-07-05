@@ -103,7 +103,7 @@
 
         function update() {
 
-            if ($.active) return
+            // if ($.active) return
 
             $.ajax({
                 url: '/api/conta/getAll',
@@ -113,35 +113,56 @@
 
                     let table = $('#table')
 
+                    let income = $('#totalIncome')
+                    let outcome = $('#totalOutcome')
+                    let balance = $('#totalBalance')
+
+                    let inc = 0
+                    let out = 0
+
                     var html = ''
+                    
+                    data = data.reverse()
 
                     for (var i = 0; i < data.length; i++) {
 
                         var transaction = data[i]
+                        
+
+                        // (Math.round(num * 100) / 100).toFixed(2);
 
                         if (transaction.tipo == "Outcome") {
                             html +=
                                 `<tr>
                                     <td colspan="3"> ${transaction.nome} </td>
-                                    <td colspan="2" class="text-danger"><i class="fa fa-minus" aria-hidden="true"></i> ${transaction.valor} </td>
+                                    <td colspan="2" class="text-danger"><i class="fa fa-minus" aria-hidden="true"></i> ${(Math.round(transaction.valor * 100) / 100).toFixed(2)} </td>
                                     <td> ${transaction.dia.slice(8, 10)}/${transaction.dia.slice(5, 7)}/${transaction.dia.slice(0, 4)} </td>
                                     <td colspan="10"> ${transaction.token} </td>
                                     <td><a type="button" class="text-danger" onclick="deleteTransaction(${transaction.id})"><i class="fa fa-times" aria-hidden="true"></i></a></td>
                                  </tr>`
-                                 
+                            out += transaction.valor
+
                         } else {
                             html +=
                                 `<tr>
                                     <td colspan="3"> ${transaction.nome} </td>
-                                    <td colspan="2" class="text-success"><i class="fa fa-plus" aria-hidden="true"></i> ${transaction.valor} </td>
+                                    <td colspan="2" class="text-success"><i class="fa fa-plus" aria-hidden="true"></i> ${(Math.round(transaction.valor * 100) / 100).toFixed(2)} </td>
                                     <td>${transaction.dia.slice(8, 10)}/${transaction.dia.slice(5, 7)}/${transaction.dia.slice(0, 4)} </td>
                                     <td colspan="10"> ${transaction.token} </td>
                                     <td><a type="button" class="text-danger" onclick="deleteTransaction(${transaction.id})"><i class="fa fa-times" aria-hidden="true"></i></a></td>
                                 </tr>`
-                        }
 
+                            inc += transaction.valor
+                        }
+                            
                     }
 
+                    income.html('$ '+(Math.round(inc * 100) / 100).toFixed(2))
+                    outcome.html('$ '+(Math.round(out * 100) / 100).toFixed(2))
+
+                    let bal = inc - out
+
+                    balance.html('$ '+(Math.round(bal * 100) / 100).toFixed(2))
                     table.html(html)
 
                 },
