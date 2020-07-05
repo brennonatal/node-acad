@@ -20,16 +20,19 @@
     color: #FFF !important;
   }
 
-  [data-theme="dark"] .bg-success {
+  [data-theme="dark"] .income {
     background-color: #4CA746 !important;
+    color: #E3E3E3 !important;
   }
 
-  [data-theme="dark"] .bg-danger {
+  [data-theme="dark"] .outcome {
     background-color: #DC3545 !important;
+    color: #E3E3E3 !important;
   }
 
-  [data-theme="dark"] .bg-secondary {
+  [data-theme="dark"] .balance {
     background-color: #32383E !important;
+    color: #E3E3E3 !important;
   }
  
   [data-theme="dark"] .text-dark {

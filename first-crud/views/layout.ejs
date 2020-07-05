@@ -11,7 +11,7 @@
 
 </head>
 
-<body onload="setIcon()">
+<body onload="setIcon()" style="background-color: #f8f8f8;">
     <div class="container-fluid">
 
         <%- body %>
@@ -24,7 +24,6 @@
     <script src="/js/home-page.js"></script>
 
     <script>
-
 
         $("#form").validate({
             rules: {
@@ -68,8 +67,8 @@
                     contentType: "application/json",
 
                     success: function (dadosDeRetorno) {
-                        alert(dadosDeRetorno)
-                        form.reset()
+                        // alert(dadosDeRetorno)
+                        // form.reset()
                         setTimeout(() => { window.location = "/" }, 1)
                     },
 
@@ -86,20 +85,24 @@
 
 
         function deleteTransaction(id) {
-			
-			$.ajax({
-				url: '/api/conta/delete/' + id,
-				method: "GET",
-				
-				success: function (data) {
-					update()
-				},
-				
-				error: function () {
-					alert('Something went wrong')
-				}
-			})
-		}
+
+            if ($.active) return
+
+            if (!confirm('Do you really want to delete this transaction?')) return
+
+            $.ajax({
+                url: '/api/conta/delete/' + id,
+                method: "GET",
+
+                success: function (data) {
+                    update()
+                },
+
+                error: function () {
+                    alert('Something went wrong')
+                }
+            })
+        }
 
         function update() {
 
@@ -121,13 +124,13 @@
                     let out = 0
 
                     var html = ''
-                    
+
                     data = data.reverse()
 
                     for (var i = 0; i < data.length; i++) {
 
                         var transaction = data[i]
-                        
+
 
                         // (Math.round(num * 100) / 100).toFixed(2);
 
@@ -154,15 +157,15 @@
 
                             inc += transaction.valor
                         }
-                            
+
                     }
 
-                    income.html('$ '+(Math.round(inc * 100) / 100).toFixed(2))
-                    outcome.html('$ '+(Math.round(out * 100) / 100).toFixed(2))
+                    income.html('$ ' + (Math.round(inc * 100) / 100).toFixed(2))
+                    outcome.html('$ ' + (Math.round(out * 100) / 100).toFixed(2))
 
                     let bal = inc - out
 
-                    balance.html('$ '+(Math.round(bal * 100) / 100).toFixed(2))
+                    balance.html('$ ' + (Math.round(bal * 100) / 100).toFixed(2))
                     table.html(html)
 
                 },
