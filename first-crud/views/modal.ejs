@@ -28,6 +28,9 @@
                             <option>Income</option>
                             <option>Outcome</option>
                         </select>
+                        <div class="valid-feedback">
+                            That's ok!
+                        </div>
                         <div class="invalid-feedback">
                             Please select a transaction type.
                         </div>
@@ -36,12 +39,15 @@
                         <label for="amount">Amount</label>
                         <input type="text" class="form-control border-0" id="amount" name="amount" placeholder="$"
                             required>
+                        <div class="valid-feedback">
+                            I got you!
+                        </div>
                         <div class="invalid-feedback">
                             Please provide the transaction amount.
                         </div>
                     </div>
                     <hr>
-                    <button type="submit" class="btn btn-primary btn-block">Add</button>
+                    <button type="submit" class="btn btn-primary btn-block" id="submitButton">Add</button>
                 </form>
             </div>
 
@@ -69,6 +75,6 @@
         }, false)
     })()
 
-    
+
 
 </script>

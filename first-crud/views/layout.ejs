@@ -67,9 +67,15 @@
                     contentType: "application/json",
 
                     success: function (dadosDeRetorno) {
-                        // alert(dadosDeRetorno)
-                        // form.reset()
-                        setTimeout(() => { window.location = "/" }, 1)
+                        let button = $('#submitButton')
+                        button.removeClass('btn-primary ').addClass('btn-success');
+                        button.addClass('btn-success').removeClass('btn-primary');
+                        button.html('<i class="fa fa-check-square-o" aria-hidden="true"></i>')
+
+                        setTimeout(() => {
+                            $("#form :input").prop("disabled", true)
+                        }, 2000)
+                        setTimeout(() => { window.location = "/" }, 1000)
                     },
 
                     error: function (xhr) {

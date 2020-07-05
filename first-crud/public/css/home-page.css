@@ -62,3 +62,8 @@ input#darkSwitch.custom-control-input:focus{
 .close {
     text-shadow: none;
 }
+
+#submitButton {
+    font-size: 16px;
+    transition: 400ms;
+}
