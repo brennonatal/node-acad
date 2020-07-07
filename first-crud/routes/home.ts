@@ -5,7 +5,7 @@ import Conta = require('../models/conta')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-    res.render('index')
+    res.render('home/index')
 })
 
 export = router
